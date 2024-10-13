@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 type deck []string
 
@@ -27,4 +30,12 @@ func (d deck) print() {
 
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
+}
+
+func (d deck) shuffle() {
+	// Implement shuffle logic here
+	for i := range d {
+		randNum := rand.Intn(len(d) - 1)
+		d[i], d[randNum] = d[randNum], d[i]
+	}
 }
