@@ -16,3 +16,8 @@ func main() {
 
 	io.Copy(os.Stdout, resp.Body)
 }
+
+
+func printSomething(value any){
+	fmt.Println(value)
+}
