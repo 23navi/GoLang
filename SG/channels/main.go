@@ -22,10 +22,10 @@ func main() {
 	}
 
 	for l := range c {
-		go func() {
+		go func(l string) {
 			checkLink(l, c)
 			time.Sleep(5 * time.Second)
-		}()
+		}(l)
 	}
 }
 
